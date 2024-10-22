@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cake" onclick="blowOutCandles()">
-        <div class="cake-body">
-            <div class="cake-number">22</div>
-            <div class="candles">
-                <div class="candle" id="candle1"><div class="flame"></div></div>
-                <div class="candle" id="candle2"><div class="flame"></div></div>
+    <div class="container">
+        <button id="wishButton" onclick="makeAWish()">Make a Wish</button>
+        <div class="cake">
+            <div class="cake-body">
+                <div class="cake-number">22</div>
+                <div class="candles">
+                    <div class="candle" id="candle1"><div class="flame"></div></div>
+                    <div class="candle" id="candle2"><div class="flame"></div></div>
+                </div>
             </div>
         </div>
+        <div class="heart" id="heart">❤️ <span>Happy Birthday!</span></div>
     </div>
-    <div class="heart" id="heart">❤️</div>
     <canvas id="fireworks"></canvas>
 
     <script src="script.js"></script>
 </body>
 </html>
+

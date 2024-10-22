@@ -1,15 +1,18 @@
+function makeAWish() {
+    startFireworks();
+    setTimeout(blowOutCandles, 2000); // Delay candle blowout for 2 seconds
+    setTimeout(showHeart, 4000); // Delay heart appearance for 4 seconds
+}
+
 function blowOutCandles() {
-    // Remove the flame
     document.querySelectorAll('.flame').forEach(flame => flame.style.display = 'none');
-    
-    // Show the heart
+}
+
+function showHeart() {
     const heart = document.getElementById('heart');
     heart.style.display = 'block';
-    heart.style.top = '40%';
-    heart.style.left = 'calc(50% - 25px)';
-
-    // Start fireworks
-    startFireworks();
+    heart.style.top = '30%';
+    heart.style.left = 'calc(50% - 40px)';
 }
 
 function startFireworks() {
@@ -36,7 +39,7 @@ function startFireworks() {
         particles.forEach((particle, index) => {
             if (particle.life > 0) {
                 ctx.beginPath();
-                ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2);
+                ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(255, ${Math.random() * 255}, 0, ${particle.life / 100})`;
                 ctx.fill();
                 particle.x += particle.xSpeed;
@@ -56,3 +59,4 @@ function startFireworks() {
     createParticle(canvas.width / 2, canvas.height / 2);
     drawParticles();
 }
+

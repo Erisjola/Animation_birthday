@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+}
+
+.cake {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: #ffb6c1;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cake-body {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    color: white;
+}
+
+.cake-number {
+    font-weight: bold;
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -30px;
+}
+
+.candle {
+    width: 10px;
+    height: 40px;
+    background: #ff6347;
+    border-radius: 5px;
+    position: relative;
+}
+
+.flame {
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.heart {
+    position: absolute;
+    font-size: 50px;
+    display: none;
+    color: red;
+    animation: heartPop 1s ease-out forwards;
+}
+
+@keyframes heartPop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}

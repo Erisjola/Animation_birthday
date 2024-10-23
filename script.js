@@ -10,8 +10,9 @@ function blowOutCandles() {
 
 function showHeart() {
     const heart = document.getElementById('heart');
-    heart.style.transform = 'translate(-50%, -50%) scale(1)'; // Scales the heart to make it visible
-    heart.style.transition = 'transform 1s'; // Smooth transition
+    heart.style.display = 'block';
+    heart.style.transform = 'translate(-50%, -50%) scale(1)';
+    heart.style.transition = 'transform 1s';
 }
 
 function startFireworks() {
@@ -53,7 +54,7 @@ function startFireworks() {
 
     setInterval(() => {
         createParticle(Math.random() * canvas.width, Math.random() * (canvas.height / 2));
-    }, 500); // Fireworks every 500ms
+    }, 500);
 
     drawParticles();
 }

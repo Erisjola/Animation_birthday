@@ -1,11 +1,14 @@
+/* General Styles */
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: radial-gradient(circle at center, #001a4d, #000);
-    margin: 0;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -15,8 +18,91 @@ body {
     height: 100%;
 }
 
+/* Cake Styles */
+.cake {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layer {
+    position: relative;
+    background: #f8b195;
+    border-radius: 10px;
+    border: 2px solid #d85a7f;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Layer Sizes */
+.layer1 {
+    width: 250px;
+    height: 100px;
+}
+
+.layer2 {
+    width: 180px;
+    height: 80px;
+}
+
+/* Frosting */
+.frosting {
+    width: 100%;
+    height: 20px;
+    background: #f67280;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: -20px;
+}
+
+/* Decorations */
+.decorations {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 10px;
+    width: 80%;
+}
+
+.decorations::before,
+.decorations::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #c06c84;
+    border-radius: 50%;
+}
+
+/* Candle */
+.candle {
+    width: 10px;
+    height: 40px;
+    background-color: #87cefa;
+    border-radius: 5px;
+    margin-top: -10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flame {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, yellow, orange);
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    animation: flicker 0.3s infinite alternate;
+}
+
+/* Button Styles */
 button {
-    background-color: #001a4d; /* Matches the background */
+    background-color: #001a4d;
     color: white;
     border: none;
     padding: 15px 25px;
@@ -28,130 +114,10 @@ button {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
 }
 
-.cake {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -50px;
-}
-
-.layer {
-    width: 100%;
-    height: 60px;
-    background: linear-gradient(to top, #ffb6c1, #ff8ba0);
-    border-radius: 10px;
-    border: 2px solid #d85a7f;
-    margin-bottom: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Adjusted layer sizes for a more tiered effect */
-.layer1 {
-    width: 90%;
-    position: relative;
-}
-
-.layer2 {
-    width: 75%;
-}
-
-.layer3 {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to top, #ffd9e0, #ffc1d3);
-    border-radius: 10px;
-    border: 2px solid #d85a7f;
-    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Add the "HAPPY BIRTHDAY" text on the base layer */
-.layer1::after {
-    content: "HAPPY BIRTHDAY";
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.frosting {
-    width: 100%;
-    height: 15px;
-    background: repeating-linear-gradient(
-        135deg,
-        #ffffff,
-        #ffffff 5px,
-        #ffb6c1 5px,
-        #ffb6c1 10px
-    );
-    border-radius: 5px;
-    animation: drip 3s infinite alternate;
-    margin-top: 5px;
-}
-
-@keyframes drip {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(5px); }
-}
-
-.cake-number {
-    font-size: 24px;
-    color: #d85a7f;
-    margin: 10px 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.candles {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: -10px;
-}
-
-.candle {
-    width: 10px;
-    height: 50px;
-    border-radius: 5px;
-    position: relative;
-    border: 1px solid #d85a7f;
-    background: repeating-linear-gradient(
-        45deg,
-        #ffffff,
-        #ffffff 5px,
-        #87cefa 5px,
-        #87cefa 10px
-    );
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.flame {
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, yellow, orange);
-    border-radius: 50%;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: flicker 0.3s infinite alternate;
-    box-shadow: 0px 0px 8px rgba(255, 165, 0, 0.5);
-}
-
-@keyframes flicker {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.2); opacity: 0.8; }
-}
-
+/* Heart Animation */
 .heart {
     position: absolute;
     font-size: 80px;
@@ -159,7 +125,6 @@ button {
     color: red;
     animation: heartZoom 2s ease-out forwards;
     z-index: 10;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes heartZoom {
@@ -167,6 +132,12 @@ button {
     100% { transform: scale(15); }
 }
 
+@keyframes flicker {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* Fireworks */
 #fireworks {
     position: absolute;
     top: 0;

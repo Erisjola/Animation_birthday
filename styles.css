@@ -25,8 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    transform: translateY(-50px);
+    margin-top: 50px;
 }
 
 /* Layer Styles */
@@ -35,7 +34,7 @@ body {
     background: #f8b195;
     border-radius: 10px;
     border: 2px solid #d85a7f;
-    margin: 20px 0;
+    margin-bottom: -30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +50,8 @@ body {
 .layer2 {
     width: 200px;
     height: 100px;
+    margin-bottom: -50px; /* Adjust the position of the smaller layer */
+    z-index: 1; /* Ensures the smaller layer is above the base */
 }
 
 /* Frosting */
@@ -81,7 +82,7 @@ body {
     background-color: #c06c84;
     border-radius: 50%;
     position: absolute;
-    top: 15px;
+    top: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -97,8 +98,8 @@ body {
 .candles {
     display: flex;
     justify-content: space-around;
-    width: 80%;
-    margin-top: -30px;
+    width: 100%;
+    margin-top: -40px;
 }
 
 .candle {

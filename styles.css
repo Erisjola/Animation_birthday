@@ -25,7 +25,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin: auto;
+    transform: translateY(0); /* Center the cake vertically */
+    top: 50%; /* Position in the middle */
+    transform: translateY(-50%);
 }
 
 /* Layer Styles */
@@ -50,8 +53,8 @@ body {
 .layer2 {
     width: 200px;
     height: 100px;
-    margin-bottom: -50px; /* Adjust the position of the smaller layer */
-    z-index: 1; /* Ensures the smaller layer is above the base */
+    margin-bottom: -50px;
+    z-index: 1;
 }
 
 /* Frosting */
